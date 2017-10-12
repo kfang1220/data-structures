@@ -11,7 +11,7 @@ var Queue = function() {
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    someInstance[last] = value;
+    storage[last] = value;
     last++;
     count++;
   };
@@ -20,7 +20,7 @@ var Queue = function() {
     if (count !== 0) {
       count--;
     }
-    temp = someInstance[first];
+    temp = storage[first];
     first++;
     return temp;
   };

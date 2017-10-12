@@ -6,7 +6,7 @@ var Stack = function() {
   var count = 0;
   // Implement the methods below
   someInstance.push = function(value) {
-    someInstance[count] = value;
+    storage[count] = value;
     count++; 
   };
 
@@ -14,7 +14,7 @@ var Stack = function() {
     if (count !== 0) {
       count--;
     }
-    return someInstance[count];
+    return storage[count];
   };
 
   someInstance.size = function() {
