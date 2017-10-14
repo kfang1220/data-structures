@@ -3,18 +3,21 @@ var LinkedList = function() {
   list.head = null;
   list.tail = null;
 
+  list.addToHead = function (value) {
+  }
+
+  list.removeTail = function () {
+  }
+
   list.addToTail = function(value) {
-    // [] [] [] [] []
-    //have previous tail point at this new node
-    //have list.tail point at last node
     var newNode = Node();
     newNode.value = value;
-    
+
     if (list.tail === null) {
       list.tail = newNode;
       list.head = newNode;
     }
-    
+    newNode.previous = list.tail;
     list.tail.next = newNode;
     list.tail = newNode;
   };
@@ -26,7 +29,7 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
-    //contains should return a boolean if target is within or not within
+
     var current = list.head;
     var bool = false;
     while (current !== null) {
@@ -46,6 +49,7 @@ var Node = function(value) {
 
   node.value = value;
   node.next = null;
+  node.previous = null;
 
   return node;
 };
